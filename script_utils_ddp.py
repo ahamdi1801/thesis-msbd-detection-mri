@@ -73,6 +73,7 @@ class DDP_multinode_CacheDataset(CacheDataset):
             even_divisible=True,
         )[dist.get_rank()]
 
+# https://github.com/Lightning-AI/pytorch-lightning/discussions/11763
 class DDP_CacheDataset(CacheDataset):
     """CacheDataset for DistributedDataParallel training."""
     def __init__(self, data_list: list, transform, cache_rate: float = 0, num_workers: int=0):
